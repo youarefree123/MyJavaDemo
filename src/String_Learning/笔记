@@ -1,0 +1,60 @@
+String 一旦被初始化就不能改变（常量）
+String 重写了equals
+
+String s1 = "abc";
+String s2 = new String("abc");
+s1在内存中有一个对象，s2有两个对象
+
+String 类适用于描述字符串事务。
+常见方法：
+1：获取
+    1.1：字符串的长度 int length();
+    1.2: 获取某个位置上的字符： charAt(int index);
+    1.3: 根据字符获取该字符位置： int indexOf(int ch); (传入的参数是ACSII 码)
+         从指定位置开始获取想要的字符位置 int indexOf(int ch , int fromIndex)
+
+    1.4：根据字符串获取在该字符位置： int indexOf(String str); (传入的参数是ACSII 码)
+         从指定位置开始获取想要的字符串位置 int indexOf(String str , int fromIndex)
+
+    1.5: 反向索引字符串 lastIndexOf(int ch);
+
+2：判断
+    2.1: 字符串中是否包含某一个字串 boolean contains(str);
+    2.2：字符串中是否有内容 boolean isEmpty();
+    2.3：字符串是否是以指定内容开头 boolean startsWith(int ch);
+    2.4：字符串是否以指定内容结尾 boolean endsWith(int ch);
+    2.5: 判断字符串内容是否相同： boolean eauqls(str);
+    2.6: 判断内容是否相同，并忽略大小写： boolean equalsIgnoreCase(str);
+
+ 3:转换
+    3.1： 将字符串数组转成字符串。
+                构造函数：String(char[])
+                          String(char[], int offset,int count); 将字符串中的一部分份转换成字符串
+                静态方法：static String copyValueOf(char[]);
+                          static String copyValueOf(char[] data ,int offset , int count);
+                          static String ValueOf(char[]);
+    3.2： 将字符串转成字符数组 : char[] toCharArray();
+    3.3:  将字符串转换成字节数组： 上上面的char[] 改成 byte[]
+    3.4:  将基本数据类型转换成字符串：
+               static String valueOf(int)
+               static String valueOf(double) ...
+    3.6: 字符串转换成int: Integer.parseInt(str);
+                          Integer.valueOf(str).intValue();
+字符串和字节数组在转换过程中，是可以指定字符码表的
+
+
+4:替换(返回的是一个新的字符串！！！)
+    String replace(char oldChar,char newChar); （如果要替换掉的字符不存在，返回原串）
+    String replace(CharSequence target,CharSequence replacement);
+5:切割
+    String[] split(regex); //根据regex分割字符串
+6:字串，获取字符串中的一部分
+    String subString(begin,end);(end可以省略) 包含头，不包含尾
+7:转换
+    7.1:将字符串转成大写或者小写。
+        String toUpperCase();
+        String toLowerCase();
+    7.2:将字符串两端的多个空格去除
+        String trim();
+    7.3：对两个字符串进行自然顺序的比较
+        int compareTo(String);(小于该参数返回负数(ACSII码的差值)，大于返回整数,0表示相等)
