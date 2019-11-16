@@ -58,3 +58,28 @@ String 类适用于描述字符串事务。
         String trim();
     7.3：对两个字符串进行自然顺序的比较
         int compareTo(String);(小于该参数返回负数(ACSII码的差值)，大于返回整数,0表示相等)
+
+StringBuffer是字符串缓冲区，是一个容器!!
+            长度可变，可添加多个数据类型，最终会通过toString方法转换成字符串
+
+实现：增删改查 CURD create update read delete
+
+1:增：append();将指定数据作为参数添加到已有数据结尾处
+      insert(position , data);插入到指定位置
+
+2:删：StringBuffer delete(start,end); 不包括end
+      StringBuffer deletecharAt(index);
+
+3：改: StringBuffer repalce(start,end,data); 替换成data
+       void setcharAt(index , ch); 替换单个字符
+
+反转：StringBuffer reverse();
+
+
+StringBuilder ： StringBuffer的简易替换,StringBuffer线程同步
+                 StringBuilder线程不同步
+
+java版本升级三个因素：
+    提高安全性
+    简化书写
+    提高安全性
