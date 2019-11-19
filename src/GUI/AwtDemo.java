@@ -10,17 +10,20 @@
 
 
 package GUI;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 public class AwtDemo {
     public static void main(String[] args) {
         Frame f = new Frame("my awt");
         f.setSize(500,500); //设置窗体初始大小
         f.setLocation(300,200);//设置窗体距屏幕最左端位置
         f.setLayout(new FlowLayout());
-        Button b = new Button("app");
+        Button b = new Button("button");
         f.add(b);
 
-        f.setVisible(true); //设置窗体可见
+
+        f.setVisible(true); //设置窗体可见f
        // System.out.println("Hello World");
     }
 }

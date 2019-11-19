@@ -17,4 +17,6 @@
 ！以上三者在java中已经定义好了，我们只需要对产生的动作进行处理
 
 事件处理：由开发者自行编写
-    
+
+windowListener的子类windowAdapter已经实现了windowListener的所有方法，
+所以只要继承自windowAdapter覆盖我需要的方法即可
