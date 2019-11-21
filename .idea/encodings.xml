@@ -2,6 +2,14 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/GUI/AwtDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/GUI/MouseComponent.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/GUI/MouseFream.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/GUI/MyEllipse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/GUI/MyPoint.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/GUI/MyRect.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/GUI/MyShape.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/GUI/Robert.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/GUI/Test.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
