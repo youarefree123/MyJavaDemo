@@ -50,16 +50,15 @@ public abstract class MyShape {
 		p2.setY(p2.getY()+dy);
 	}
 	
-	public void update(MyPoint p)
+	public void update(MyPoint p) //更新坐标
 	{   
-		if(p.getX()<=p1.getX()||p.getY()<=p1.getY()) {
+		if(p.getX()<=p1.getX()||p.getY()<=p1.getY()) { //左上往右下更新
 			p1.setX(p.getX());
 			p1.setY(p.getY());
 		}
-
-		else {
-		p2.setX(p.getX());
-		p2.setY(p.getY());
+		else { //右下往左上更新
+			p2.setX(p.getX());
+			p2.setY(p.getY());
 		}
 	}
 

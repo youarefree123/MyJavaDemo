@@ -31,14 +31,14 @@ public class MyPoint {
 	}
 
 	public boolean IsBig(MyPoint p) {
-		if (getX() < p.getX() && getY() < p.getY())
+		if (this.getX() < p.getX() && this.getY() < p.getY())
 			return true;
 		else
 			return false;
 	}
 
 	public boolean IsSmall(MyPoint p) {
-		if (getX() > p.getX() && getY() > p.getY())
+		if (this.getX() > p.getX() && this.getY() > p.getY())
 			return true;
 		else
 			return false;

@@ -3,61 +3,75 @@ package Experiment_8;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-@SuppressWarnings("serial")
-public class MouseFream extends JFrame {
+
+public class MouseFream extends JFrame { // 布局
 	public MouseFream() {
-		MouseComponent mainPanel = new MouseComponent();
+		MouseComponent mainPanel = new MouseComponent(); //主面板
 		add(mainPanel);
-		JButton colorbtn = new JButton();
-		colorbtn.setPreferredSize(new Dimension(20, 20));
-		colorbtn.setBackground(Color.BLACK);
+		JButton colorbut = new JButton(); //新建一个按钮
+		colorbut.setPreferredSize(new Dimension(20, 20)); //设置按钮大小
+		colorbut.setBackground(Color.BLUE); //设置按钮的颜色
 
 		JButton blue = new JButton("blue");
 		blue.addActionListener(ActionEvent -> {
 			mainPanel.setPenColor(Color.BLUE);
-			colorbtn.setBackground(Color.BLUE);
+			colorbut.setBackground(Color.BLUE);
 		});
+
+
+		JButton black = new JButton("black");
+		black.addActionListener(ActionEvent -> {
+			mainPanel.setPenColor(Color.BLACK);
+			colorbut.setBackground(Color.BLACK);
+		});
+
 		JButton green = new JButton("green");
 		green.addActionListener(ActionEvent -> {
 			mainPanel.setPenColor(Color.GREEN);
-			colorbtn.setBackground(Color.GREEN);
+			colorbut.setBackground(Color.GREEN);
 		});
 		JButton red = new JButton("red");
 		red.addActionListener(ActionEvent -> {
 			mainPanel.setPenColor(Color.RED);
-			colorbtn.setBackground(Color.RED);
+			colorbut.setBackground(Color.RED);
 		});
+
 		JButton pink = new JButton("pink");
 		pink.addActionListener(ActionEvent -> {
 			mainPanel.setPenColor(Color.PINK);
-			colorbtn.setBackground(Color.PINK);
+			colorbut.setBackground(Color.PINK);
 		});
-		colorbtn.setOpaque(true);
-		colorbtn.setBorderPainted(false);
+
+		colorbut.setOpaque(true); //设置组件不透明(右上角)
+		colorbut.setBorderPainted(false); //去边框
 		JPanel colorpanel = new JPanel();
 		colorpanel.add(blue);
 		colorpanel.add(red);
 		colorpanel.add(green);
 		colorpanel.add(pink);
-		colorpanel.add(colorbtn);
-		add(colorpanel, BorderLayout.NORTH);
-		JButton rect = new JButton("rect");
-		rect.addActionListener(ActionEvent -> {
-			mainPanel.setShapetype("rect");
+		colorpanel.add(black);
+		colorpanel.add(colorbut);  //添加这五个容器
+		add(colorpanel, BorderLayout.NORTH); //边框布局(北)
+
+		JButton rectangle = new JButton("rectangle");
+		rectangle.addActionListener(ActionEvent -> {
+			mainPanel.setShapetype("rectangle");
 		});
-		JButton elli = new JButton("elli");
-		elli.addActionListener(ActionEvent -> {
-			mainPanel.setShapetype("elli");
+
+		JButton ellipse = new JButton("ellipse");
+		ellipse.addActionListener(ActionEvent -> {
+			mainPanel.setShapetype("ellipse");
 		});
+
 		JPanel colorpanel2 = new JPanel();
-		colorpanel2.add(rect);
-		colorpanel2.add(elli);
-		add(colorpanel2, BorderLayout.SOUTH);
+		colorpanel2.add(rectangle);
+		colorpanel2.add(ellipse);
+		add(colorpanel2, BorderLayout.SOUTH); //边框布局(南)
 
 	}
 }
