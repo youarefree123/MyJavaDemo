@@ -2,6 +2,8 @@ package Lambda;
 
 public class LambdaTest {
 
+
+
     interface MathOperation{
         int operation(int a,int b);
     }
