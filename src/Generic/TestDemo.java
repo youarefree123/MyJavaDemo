@@ -37,7 +37,7 @@ class Test<T>{
 
 public class TestDemo {
     public static void main(String[] args) {
-        // 定义泛型类 Test 的一个Integer版本
+        // 定义泛型类 Main_0 的一个Integer版本
         Test<Integer> intOb = new Test<Integer>(88);
         intOb.showType();
         int i = intOb.getOb();

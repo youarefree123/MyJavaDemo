@@ -14,6 +14,7 @@ public abstract class MyShape {
 		this.color = color;
 	}
 
+
 	public MyPoint getP1() {
 		return p1;
 	}
