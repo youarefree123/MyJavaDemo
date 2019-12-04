@@ -40,6 +40,7 @@ public abstract class MyShape {
 	}
 
 	public abstract void Draw(Graphics2D g);
+	public abstract void Draw(Graphics2D g,Color color);
 
 	public abstract boolean IsContain(MyPoint p);
 

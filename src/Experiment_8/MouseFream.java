@@ -1,8 +1,6 @@
 package Experiment_8;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.ActionListener;
 
 
@@ -10,8 +8,9 @@ import javax.swing.*;
 
 
 public class MouseFream extends JFrame { // 布局
+	private MouseComponent mainPanel;
 	public MouseFream() {
-		MouseComponent mainPanel = new MouseComponent(); //主面板
+		mainPanel = new MouseComponent(); //主面板
 		add(mainPanel);
 		JButton colorbut = new JButton(); //新建一个按钮
 		colorbut.setPreferredSize(new Dimension(20, 20)); //设置按钮大小
@@ -73,5 +72,9 @@ public class MouseFream extends JFrame { // 布局
 		colorpanel2.add(ellipse);
 		add(colorpanel2, BorderLayout.SOUTH); //边框布局(南)
 
+	}
+
+	public MouseComponent getMainPanel() {
+		return mainPanel;
 	}
 }

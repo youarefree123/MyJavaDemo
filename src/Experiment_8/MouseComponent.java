@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 import javax.swing.JComponent;
 
-//@SuppressWarnings("serial")
 public class MouseComponent extends JComponent { //鼠标组件类
 	private ArrayList<MyShape> squares;
 	private MyShape current; //当前图形
@@ -20,6 +19,7 @@ public class MouseComponent extends JComponent { //鼠标组件类
 	private String shapetype; //图形类型
 	private int oldx;  //原来图形的坐标
 	private int oldy;
+
 
 	public MouseComponent() { //构造函数
 		squares = new ArrayList<>();
@@ -30,13 +30,11 @@ public class MouseComponent extends JComponent { //鼠标组件类
 		addMouseMotionListener(new MouseMotionHandle()); //鼠标事件监听器
 	}
 
-
-
-
-	public void paintComponent(Graphics g) { //画出图形
-		for (MyShape s : squares)
-			s.Draw((Graphics2D) g);
+	public ArrayList<MyShape> getSquares() {
+		return squares;
 	}
+
+
 
 	public Color getPenColor() {
 		return penColor;
@@ -67,13 +65,13 @@ public class MouseComponent extends JComponent { //鼠标组件类
 	}
 
 	public MyShape find(MyPoint p) // 寻找图形内是否已经有这个点，如果有返回这个图形，如果没有返回null
-	{
-		MyShape ret = null;
-		for (MyShape r : squares) {
-			if (r.IsContain(p))
-				ret = r;
-		}
-		return ret;
+		{
+			MyShape ret = null;
+			for (MyShape r : squares) {
+				if (r.IsContain(p))
+					ret = r;
+			}
+			return ret;
 	}
 
 	public void remove(MyShape s) {  //删除图象
@@ -128,7 +126,7 @@ public class MouseComponent extends JComponent { //鼠标组件类
 				oldy = y;
 			} else if (current != null && isNewShape) { //否则创建新图形并时刻显示此时坐标
 				current.update(new MyPoint(x, y));
-				System.out.println("x坐标"+x+"y坐标"+y);
+				//System.out.println("x坐标"+x+"y坐标"+y);
 			}
 			repaint(); //重新绘制
 		}
@@ -143,6 +141,11 @@ public class MouseComponent extends JComponent { //鼠标组件类
 				setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));//返回一个具有指定默认光标类型。
 		}
 
+	}
+
+	public void paintComponent(Graphics g) { //画出图形
+		for (MyShape s : squares)
+			s.Draw((Graphics2D) g);
 	}
 
 }
