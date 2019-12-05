@@ -12,14 +12,9 @@ import java.util.Scanner;
 
 public class drawingBoard extends MouseComponent{
     private String path;
-    private JFrame frame;
-    ArrayList<MyShape> arr;
-
-    public drawingBoard(String path, JFrame frame) {
+    public drawingBoard(String path) {
+        super();
         this.path = path;
-        this.frame = frame;
-        MouseFream mf = (MouseFream) frame;
-        arr = mf.getMainPanel().getSquares();
     }
 
 
@@ -27,8 +22,8 @@ public class drawingBoard extends MouseComponent{
         return path;
     }
 
-    public ArrayList<MyShape> getArr() {
-        return arr;
+    public ArrayList<MyShape> getSqr() {
+        return super.getSquares();
     }
 
     public void load() throws IOException {
@@ -50,13 +45,18 @@ public class drawingBoard extends MouseComponent{
             if (tmp[0].equals("r")) {
                 MyRectangle r = new MyRectangle(Integer.valueOf(tmp[1]), Integer.valueOf(tmp[2]),
                         Integer.valueOf(tmp[3]), Integer.valueOf(tmp[4]), color);
-                arr.add(r);
+                getSqr().add(r);
                 //System.out.println(arr.isEmpty());
             } else if (tmp[0].equals("e")) {
                 MyEllipse e = new MyEllipse(Integer.valueOf(tmp[1]), Integer.valueOf(tmp[2]),
                         Integer.valueOf(tmp[3]), Integer.valueOf(tmp[4]), color);
-                arr.add(e);
+                getSqr().add(e);
             }
+        }
+    }
+    public void paintComponent(Graphics g) { //画组件
+        for (MyShape s : getSqr()) {
+            s.Draw((Graphics2D) g);
         }
     }
 

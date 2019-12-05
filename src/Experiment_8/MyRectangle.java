@@ -21,17 +21,6 @@ public class MyRectangle extends MyShape {
 		g.draw(rect);
 	}
 
-	public void Draw(Graphics2D g,Color color) {
-		Rectangle2D.Double rect = new Rectangle2D.Double(getP1().getX(), getP1().getY(),
-				getP2().getX() - getP1().getX(), getP2().getY() - getP1().getY());
-		//Graphics2D g2 = (Graphics2D) g;
-		g.setColor(getColor());
-		g.fill(rect);
-		g.setColor(color);
-		g.draw(rect);
-
-	}
-
 
 	@Override
 	public boolean IsContain(MyPoint p) { //判断是否被包含

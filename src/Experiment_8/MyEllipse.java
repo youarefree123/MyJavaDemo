@@ -21,15 +21,6 @@ public class MyEllipse extends MyShape {
 		g.draw(ellipse);
 	}
 
-	public void Draw(Graphics2D g,Color color) {
-		Ellipse2D.Double ellipse = new Ellipse2D.Double(getP1().getX(), getP1().getY(), getP2().getX() - getP1().getX(),
-				getP2().getY() - getP1().getY());
-		//Graphics2D g2 = (Graphics2D) g;
-		g.setColor(getColor());
-		g.fill(ellipse);
-		g.setColor(color);
-		g.draw(ellipse);
-	}
 
 	@Override
 	public boolean IsContain(MyPoint p) {
