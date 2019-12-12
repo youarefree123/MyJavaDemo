@@ -21,7 +21,7 @@ public class InputOutputFile {
                 x = x.replace(".", " ");
                 x = x.replace(";", " ");
                 //System.out.println(x);
-                String[] arr = x.split(" ");
+                String[] arr = x.split("\\W++");
                 //System.out.println(arr[0]);
                 for(int i = 0 ; i < arr.length ; i++){
                     if (arr[i] == "") continue;
@@ -45,7 +45,7 @@ public class InputOutputFile {
                 }
             });
 
-            System.out.println(map.entrySet());
+//            System.out.println(map.entrySet());
 
             int cnt = 10;
             for(Map.Entry<String, Integer> t:list){
