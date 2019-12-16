@@ -64,6 +64,12 @@ public class MouseFream extends JFrame { // 布局
 		});
 
 
+//		JButton pink = new JButton("pink");
+//		pink.addActionListener(ActionEvent -> {
+//			mainPanel.setPenColor(Color.PINK);
+//			colorbut.setBackground(Color.PINK);
+//		});
+
 		colorbut.setOpaque(true); //设置组件不透明(右上角)
 		colorbut.setBorderPainted(false); //去边框
 		JPanel colorpanel = new JPanel();
@@ -77,19 +83,16 @@ public class MouseFream extends JFrame { // 布局
 
 		JButton rectangle = new JButton("rectangle");
 		rectangle.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                mainPanel.setShapetype("rectangle");
-            }
-        });
+			@Override
+			public void actionPerformed(ActionEvent actionEvent) {
+				mainPanel.setShapetype("rectangle");
+			}
+		});
 
 		JButton ellipse = new JButton("ellipse");
-		ellipse.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                mainPanel.setShapetype("ellipse");
-            }
-        });
+		ellipse.addActionListener(ActionEvent -> {
+			mainPanel.setShapetype("ellipse");
+		});
 
 		JPanel colorpanel2 = new JPanel();
 		colorpanel2.add(rectangle);
