@@ -1,7 +1,9 @@
 package Experiment_8;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 
 
 import javax.swing.*;
@@ -17,34 +19,50 @@ public class MouseFream extends JFrame { // 布局
 		colorbut.setBackground(Color.BLUE); //设置按钮的颜色
 
 		JButton blue = new JButton("blue");
-		blue.addActionListener(ActionEvent -> {
-			mainPanel.setPenColor(Color.BLUE);
-			colorbut.setBackground(Color.BLUE);
+		blue.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent actionEvent) {
+				mainPanel.setPenColor(Color.BLUE);
+				colorbut.setBackground(Color.BLUE);
+			}
 		});
 
-
 		JButton black = new JButton("black");
-		black.addActionListener(ActionEvent -> {
-			mainPanel.setPenColor(Color.BLACK);
-			colorbut.setBackground(Color.BLACK);
+		black.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent actionEvent) {
+				mainPanel.setPenColor(Color.BLACK);
+				colorbut.setBackground(Color.BLACK);
+			}
 		});
 
 		JButton green = new JButton("green");
-		green.addActionListener(ActionEvent -> {
-			mainPanel.setPenColor(Color.GREEN);
-			colorbut.setBackground(Color.GREEN);
+		green.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent actionEvent) {
+				mainPanel.setPenColor(Color.GREEN);
+				colorbut.setBackground(Color.GREEN);
+			}
 		});
+
 		JButton red = new JButton("red");
-		red.addActionListener(ActionEvent -> {
-			mainPanel.setPenColor(Color.RED);
-			colorbut.setBackground(Color.RED);
+		red.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent actionEvent) {
+				mainPanel.setPenColor(Color.RED);
+				colorbut.setBackground(Color.RED);
+			}
 		});
 
 		JButton pink = new JButton("pink");
-		pink.addActionListener(ActionEvent -> {
-			mainPanel.setPenColor(Color.PINK);
-			colorbut.setBackground(Color.PINK);
+		pink.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent actionEvent) {
+				mainPanel.setPenColor(Color.PINK);
+				colorbut.setBackground(Color.PINK);
+			}
 		});
+
 
 		colorbut.setOpaque(true); //设置组件不透明(右上角)
 		colorbut.setBorderPainted(false); //去边框
@@ -58,14 +76,20 @@ public class MouseFream extends JFrame { // 布局
 		add(colorpanel, BorderLayout.NORTH); //边框布局(北)
 
 		JButton rectangle = new JButton("rectangle");
-		rectangle.addActionListener(ActionEvent -> {
-			mainPanel.setShapetype("rectangle");
-		});
+		rectangle.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                mainPanel.setShapetype("rectangle");
+            }
+        });
 
 		JButton ellipse = new JButton("ellipse");
-		ellipse.addActionListener(ActionEvent -> {
-			mainPanel.setShapetype("ellipse");
-		});
+		ellipse.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                mainPanel.setShapetype("ellipse");
+            }
+        });
 
 		JPanel colorpanel2 = new JPanel();
 		colorpanel2.add(rectangle);

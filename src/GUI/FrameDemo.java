@@ -27,12 +27,12 @@ public class FrameDemo {
     }
 
     private void myEvent(){
-        f.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent windowEvent) {
-                System.exit(0);
-            }
-        });
+//        f.addWindowListener(new WindowAdapter() {
+//            @Override
+//            public void windowClosing(WindowEvent windowEvent) {
+//                System.exit(0);
+//            }
+//        });
 
         //让按钮具备退出程序的功能
         //选择addActionListener() :没有适配器

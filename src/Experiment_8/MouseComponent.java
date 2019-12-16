@@ -85,7 +85,7 @@ public class MouseComponent extends JComponent { //鼠标组件类
 
 	private class MouseHandler extends MouseAdapter { //创建鼠标事件处理类，继承自监听器对象的便捷类。
 
-		// @Override
+		 @Override
 		public void mouseClicked(MouseEvent e) { //重写鼠标双击删除
 			int cnum = e.getClickCount();  //获取与此事件关联的鼠标单击次数
 			int x = (int) e.getPoint().getX(); //得到坐标
