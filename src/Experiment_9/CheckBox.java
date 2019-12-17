@@ -49,8 +49,5 @@ class CheckBoxFrame extends JFrame
 
         add(buttonPanel,BorderLayout.SOUTH);
         pack();
-
     }
-
-
 }

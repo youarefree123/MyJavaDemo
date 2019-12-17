@@ -94,7 +94,7 @@ public class MouseComponent extends JComponent { //鼠标组件类
 			if (cnum >= 2) { //如果点击数大于等于三，删除改图形
 				remove(current);
 			}
-			repaint(); //重新绘制组件
+			repaint(); //重新绘制
 		}
 
 		@Override
