@@ -3,7 +3,6 @@ package Experiment_8;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
 
 
 import javax.swing.*;
@@ -90,9 +89,19 @@ public class MouseFream extends JFrame { // 布局
 		});
 
 		JButton ellipse = new JButton("ellipse");
-		ellipse.addActionListener(ActionEvent -> {
-			mainPanel.setShapetype("ellipse");
+		ellipse.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent actionEvent) {
+				mainPanel.setShapetype("ellipse");
+			}
 		});
+
+
+//		JButton ellipse = new JButton("ellipse");
+//		ellipse.addActionListener(ActionEvent -> {
+//			mainPanel.setShapetype("ellipse");
+//		});
+
 
 		JPanel colorpanel2 = new JPanel();
 		colorpanel2.add(rectangle);

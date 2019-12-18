@@ -9,7 +9,7 @@ import java.io.IOException;
 import javax.swing.JFrame;
 
 public class Main_0 {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args){
 		JFrame frame = new MouseFream();
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE); //设置窗口关闭
 		frame.setSize(800, 800);
