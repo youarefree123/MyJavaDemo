@@ -1,4 +1,4 @@
-package network;
+package Homework.network;
 
 import java.io.*;
 import java.net.Socket;

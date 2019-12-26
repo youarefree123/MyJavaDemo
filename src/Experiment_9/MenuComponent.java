@@ -1,5 +1,6 @@
 package Experiment_9;
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 ;import java.awt.*;
@@ -11,16 +12,19 @@ import java.awt.event.ActionListener;
  */
 public class MenuComponent extends JFrame {
     private JPanel mainPanel; //主面板
+    private JPanel radioPanel;
+    private ButtonGroup group;
     private JLabel label; //标签
     JCheckBox bold; //复选框
     JCheckBox italiic;
     JCheckBoxMenuItem itemBold;  //菜单复选框
     JCheckBoxMenuItem itemItalic;
+    private JRadioButton smallbutton,mediumbutton,largebutton,exbutton;
     JSlider slider; //移动滑块
     private int fontSize = 36; //字体大小
     private int fontmode = 0; //字体模式
     private String fontname = "Serif"; //初始字体
-    private static final int DEFAULT_SIZE = 36;
+//    private static final int DEFAULT_SIZE = 36;
 
 
     public MenuComponent() { //面板
@@ -46,6 +50,7 @@ public class MenuComponent extends JFrame {
                 label.setText(tf.getText()); //标签得到文本框的内容，并重置标签内容
             }
         });
+
 
         //添加复选框
         JPanel checkPanel = new JPanel();
@@ -84,6 +89,7 @@ public class MenuComponent extends JFrame {
             }
         });
         mainPanel.add(faceCombo);
+
 
 
         //添加滑动条

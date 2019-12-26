@@ -6,7 +6,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import javax.swing.JComponent;
@@ -53,6 +52,7 @@ public class MouseComponent extends JComponent { //鼠标组件类
 			@Override
 			public void mouseReleased(MouseEvent arg0) { //按下鼠标并释放
 				isNewShape = false;
+				repaint();
 			}
 		}); //鼠标的监听器
 
@@ -61,13 +61,15 @@ public class MouseComponent extends JComponent { //鼠标组件类
 			public void mouseDragged(MouseEvent e) { //拖拽方法
 				int x = e.getX();
 				int y = e.getY();
-				if (current != null && !isNewShape) { //如果改位置是空的或者不是在创建新的图形对象的话
-					current.Move(x - oldx, y - oldy); //拖拽图形对象
+				if(isNewShape && current != null)//如果当前图形对象非空并且是新图形对象
+					current.update(new MyPoint(x,y));
+				else if (current != null && !isNewShape) { //如果当前图形对象非空并且不是新图形对象
+//				else if (!isNewShape){
+					int dx = x-oldx;
+					int dy = y - oldy;
 					oldx = x;
 					oldy = y;
-				} else if (current != null && isNewShape) { //否则创建新图形并时刻显示此时坐标
-					current.update(new MyPoint(x, y));
-					//System.out.println("x坐标"+x+"y坐标"+y);
+					current.Move(dx, dy); //拖拽图形对象
 				}
 				repaint(); //重新绘制
 			}
@@ -79,7 +81,7 @@ public class MouseComponent extends JComponent { //鼠标组件类
 				if (find(new MyPoint(x, y)) == null) {
 					setCursor(Cursor.getDefaultCursor()); //设置系统默认光标
 				} else
-					setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));//返回一个具有指定默认光标类型。
+					setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));//返回一个具有指定光标类型。
 			}
 		}); //鼠标事件监听器
 	}

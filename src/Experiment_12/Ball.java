@@ -1,72 +1,58 @@
 package Experiment_12;
 
-import java.awt.geom.*;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 
-/**
- * A ball that moves and bounces off the edges of a rectangle
- * @version 1.33 2007-05-17
- * @author Cay Horstmann
- */
+
 public class Ball
 {
     private static final int XSIZE = 15;
     private static final int YSIZE = 15;
-    private final double loss = 0.8;
-    private static final int g = 90;
     private double x = 0;
     private double y = 0;
-    private double v = 0;
-    private double dx = 1;
-    private double dy = 1;
-
-    /**
-     * Moves the ball to the next position, reversing direction if it hits one of the edges
-     */
-//    public void move(Rectangle2D bounds)
-//    {
-////        x += dx;
-//        y += dy;
-////        if (x < bounds.getMinX())
-////        {
-////            x = bounds.getMinX();
-////            dx = -dx;
-////        }
-////        if (x + XSIZE >= bounds.getMaxX())
-////        {
-////            x = bounds.getMaxX() - XSIZE;
-////            dx = -dx;
-////        }
-//        if (y < bounds.getMinY())
-//        {
-//            y = bounds.getMinY();
-//            dy = -dy;
-//        }
-//        if (y + YSIZE >= bounds.getMaxY())
-//        {
-//            y = bounds.getMaxY() - YSIZE;
-//            dy = -dy;
-//        }
-//    }
-
-    public void move(double t, Rectangle2D bounds) {
-        double old = v;
-        v += g*t;
-        double dy = 0.5*(old+v)*t;
-        if (y+dy >= bounds.getMaxY()) {
-            y = bounds.getMaxY();
-            v = -1*loss*v;
-        }
-        else {
-            y = (y+dy);
-        }
-        //energe = 1*g*(bounds.getMaxY()-y)+0.5*1*v*v;
+    private double dy = 0;
+    private static final double g = 0.09;
+    private double ke = 0;//动能
+    private double pe = 0;//势能
+    private double allEn; //所有能量
+    private double m = 1;
+    public Ball(int x,int y){
+        this.x=x;
+        this.y=y;
     }
 
-    /**
-     * Gets the shape of the ball at its current position.
-     */
+    public void move(Rectangle2D bounds)
+    {
+        dy += g;
+        y += dy;
+        ke = 0.5*dy*dy*m;
+        pe = m*(bounds.getHeight()-y)*g*100;
+        setAllen(ke + pe);
+        if (y + YSIZE >= bounds.getMaxY()) //如果到底了，速度反向
+        {
+            y = bounds.getMaxY() - YSIZE;
+            dy = -dy;
+            dy = dy*0.8;
+        }
+    }
+
+    public void setAllen(double en){
+        allEn = en;
+    }
     public Ellipse2D getShape()
     {
         return new Ellipse2D.Double(x, y, XSIZE, YSIZE);
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getAllEn() {
+        return allEn;
+    }
+
+    public void setAllEn(double allN) {
+        this.allEn = allN;
     }
 }

@@ -7,6 +7,8 @@ public abstract class MyShape {
 	private MyPoint p1;
 	private MyPoint p2;
 	private Color color;
+	private boolean isRollX;
+	private boolean isRollY;
 
 	public MyShape(MyPoint p1, MyPoint p2, Color color) {
 		this.p1 = p1;
@@ -53,14 +55,35 @@ public abstract class MyShape {
 	}
 	
 	public void update(MyPoint p) //更新坐标
-	{   
-		if(p.getX()<=p1.getX()||p.getY()<=p1.getY()) { //左上往右下更新
-			p1.setX(p.getX());
-			p1.setY(p.getY());
+	{
+		if(p.getX() > p1.getX() && p.getX() > p2.getX()){
+//			p2.setX(p.getX());
+			isRollX = false;
 		}
-		else { //右下往左上更新
+		else if(p.getX() < p1.getX() && p.getX() < p2.getX()){
+//			p1.setX(p.getX());
+			isRollX = true;
+		}
+		if(!isRollX){
 			p2.setX(p.getX());
+		}
+		else{
+			p1.setX(p.getX());
+		}
+
+		if(p.getY() > p1.getY() && p.getY() > p2.getY()){
+			isRollY = false;
+//			p2.setY(p.getY());
+		}
+		else if(p.getY() < p1.getY() && p.getY() < p2.getY()){
+			isRollY = true;
+//			p1.setY(p.getY());
+		}
+		if(!isRollY){
 			p2.setY(p.getY());
+		}
+		else{
+			p1.setY(p.getY());
 		}
 	}
 
