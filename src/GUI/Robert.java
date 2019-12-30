@@ -6,27 +6,27 @@ import java.awt.*;
 
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
-import javax.swing.JFrame;
+import javax.swing.*;
 
+/**
+ * 实验七：图形用户界面：画一个机器人
+ */
 //@SuppressWarnings("serial")
-//public class Robert extends JComponent {
-public class Robert extends MouseComponent {
-//    public static void main(String[] args) {
-//        JFrame frame = new MouseFream();
-//        frame.setTitle("机器人画图");
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//程序运行结果生成一个窗体
-//        frame.setSize(800,800);
-////        frame.setSize(y*2/3, x*2/3);
-//        frame.setLocationRelativeTo(null); //界面居中
-//        frame.setVisible(true); //显示界面
-//        Robert ro = new Robert();
-//        frame.add(ro); //继承自 Container 类
-//    }
-
+public class Robert extends JComponent {
+    public static void main(String[] args) {
+        JFrame frame = new MouseFream();
+        frame.setTitle("机器人画图");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//程序运行结果生成一个窗体
+        frame.setSize(800,800);
+//        frame.setSize(y*2/3, x*2/3);
+        frame.setLocationRelativeTo(null); //界面居中
+        frame.setVisible(true); //显示界面
+        Robert ro = new Robert();
+        frame.add(ro); //继承自 Container 类
+    }
     public Robert(){
         super();
     }
-
     public void paintComponent(Graphics g){ //画组件
         Font fo = new Font("宋体", Font.BOLD, 50); //加粗宋体
         g.setFont(fo);

@@ -2,6 +2,9 @@ package Experiment_12;
 
 import javax.swing.*;
 
+/**
+ * 实验十二：多线程
+ */
 public class Main_0 {
     public static void main(String[] args)
     {

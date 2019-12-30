@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /*
-/菜单画布
+/实验九：图形用户界面组件
  */
 public class MenuComponent extends JFrame {
     private JPanel mainPanel; //主面板

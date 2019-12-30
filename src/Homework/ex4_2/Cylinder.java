@@ -1,10 +1,9 @@
-package Homework;
+package Homework.ex4_2;
 
 public class Cylinder implements C{
     private double radius ; //底圆半径
     private double height ; //圆柱体高
     private String color ; //圆柱体颜色
-
 
     public Cylinder(double radius, double height) {
         this.radius = radius;

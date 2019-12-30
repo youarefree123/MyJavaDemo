@@ -1,4 +1,4 @@
-package Homework;
+package Homework.ex4;
 
 
 public class line extends Shape { //直线类
@@ -6,8 +6,8 @@ public class line extends Shape { //直线类
         super(new Point(x1,y1),new Point(x2,y2),color);
     }
     @Override
-    public void draw() {
+    public String draw() {
         System.out.println("以"+getP1()+"为起点,"+getP2()+"为中点画一条"+getColor()+"的直线");
+        return null;
     }
-
 }

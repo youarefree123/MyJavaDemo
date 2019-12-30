@@ -21,7 +21,6 @@ public class MyEllipse extends MyShape {
 		g.draw(ellipse);
 	}
 
-
 	@Override
 	public boolean IsContain(MyPoint p) {
 		if (p.IsBig(getP2()) && p.IsSmall(getP1())) {

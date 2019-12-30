@@ -1,4 +1,4 @@
-package Homework;
+package Homework.ex4;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -21,7 +21,6 @@ public class drawingBoard {
     public ArrayList<Shape> getArr() {
         return arr;
     }
-
     public void load()throws IOException{
         Scanner in = new Scanner(Paths.get(path),"UTF-8"); //读如入
         String str;
@@ -33,7 +32,6 @@ public class drawingBoard {
                 rectangle r = new rectangle(Integer.valueOf(tmp[1]),Integer.valueOf(tmp[2]),
                         Integer.valueOf(tmp[3]),Integer.valueOf(tmp[4]),tmp[5]);
                 arr.add(r);
-                //System.out.println(arr.isEmpty());
             }
             else if(tmp[0].equals("o")){
                 oval o = new oval(Integer.valueOf(tmp[1]),Integer.valueOf(tmp[2]),
@@ -47,10 +45,7 @@ public class drawingBoard {
             }
         }
     }
-
     public void draw(){
-        for (Shape it : arr){
-            it.draw();
-        }
+        for (Shape it : arr){ it.draw(); }
     }
 }

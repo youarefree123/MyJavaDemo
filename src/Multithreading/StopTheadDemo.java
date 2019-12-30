@@ -17,7 +17,7 @@ interrupt() 中断线程
 join(): 等待该线程终止
  */
 
-import com.sun.jdi.ThreadReference;
+//import com.sun.jdi.ThreadReference;
 import javafx.scene.paint.Stop;
 
 class StopThread implements Runnable {

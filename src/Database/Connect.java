@@ -1,6 +1,5 @@
 package Database;
 
-import com.sun.source.tree.WhileLoopTree;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,10 +7,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.*;
 import java.util.Properties;
-import java.util.ResourceBundle;
 
+/**
+ * 实验十一：数据库编程
+ */
 public class Connect {
-    public static void main(String[] args) throws SQLException, IOException {
+    public static void main(String[] args) {
         try {
             Connection conn = getConnection();
             System.out.println("是否成功连接pg数据库"+conn);
@@ -20,8 +21,8 @@ public class Connect {
             ResultSet resultSet = statement.executeQuery(sql);
 //            update(statement);
             showResultSet(resultSet); //列出表内数据
-//            System.out.println("查询：");
-//            searchData(resultSet,"170312149");
+            System.out.println("查询：");
+            searchData(resultSet,"170312149");
             resultSet.close();
             statement.close();
             conn.close();
@@ -37,7 +38,7 @@ public class Connect {
 
     public static void update(Statement statement) throws SQLException
     {
-        String sql = "INSERT INTO superstart VALUES ('170312195','宣自风','风少','我爱学java')";
+        String sql = "INSERT INTO superstart VALUES ('170312149','蒋骏','java','我爱java，java爱我')";
         //执行更新操作
         statement.executeUpdate(sql);
     }

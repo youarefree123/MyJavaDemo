@@ -1,4 +1,4 @@
-package Homework;
+package Homework.ex4;
 
 public abstract class Shape{ //图形抽象类
     private String color ; //颜色
@@ -31,7 +31,7 @@ public abstract class Shape{ //图形抽象类
         this.p2 = p2;
     }
 
-    public abstract void draw();
+    public abstract String draw();
 
     @Override
     public  boolean equals(Object anObject){
@@ -57,5 +57,4 @@ public abstract class Shape{ //图形抽象类
                 ",y1="+getP1().getY()+",y2="+getP2().getY()+
                 ",color ="+getColor())+"]";
     }
-
 }

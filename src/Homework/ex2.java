@@ -2,13 +2,14 @@ package Homework;
 
 import java.util.Scanner;
 
-public class Triangle2 {
-    //打印镂空三角形
+/**
+ * 实验一：打印镂空三角形
+ */
+public class ex2 {
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         System.out.println("Input The N:");
         int N = in.nextInt();
-
         for(int i = 0 ; i < N ; i++){
             for(int j = N-i-1 ; j >= 0 ; j--){
                 System.out.print(" ");
